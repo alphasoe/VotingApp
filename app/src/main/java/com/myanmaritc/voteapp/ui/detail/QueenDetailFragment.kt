@@ -18,6 +18,8 @@ import retrofit2.Response
 
 class QueenDetailFragment : Fragment() {
 
+    private val baseImg: String = "http://voting-monywa.dsv.hoz.mybluehost.me/image/"
+
     private val args: QueenDetailFragmentArgs by navArgs()
     private lateinit var item: KingQueenItem
 
@@ -37,7 +39,7 @@ class QueenDetailFragment : Fragment() {
         detailName.text = item.name
         detailClassName.text = item.className
 
-        Picasso.get().load(item.image).placeholder(R.drawable.ic_launcher_background)
+        Picasso.get().load(baseImg + item.image)
             .into(voteImage)
 
         btnSubmit.setOnClickListener {

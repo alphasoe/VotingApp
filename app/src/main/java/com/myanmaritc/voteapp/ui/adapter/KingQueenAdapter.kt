@@ -13,6 +13,8 @@ class KingQueenAdapter : RecyclerView.Adapter<KingQueenAdapter.KingQueenViewHold
 
     var clickListener: OnClickListener? = null
 
+    private val baseImg: String = "http://voting-monywa.dsv.hoz.mybluehost.me/image/"
+
     var kingKingQueenList: List<KingQueenItem> = ArrayList()
 
     inner class KingQueenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
@@ -28,7 +30,7 @@ class KingQueenAdapter : RecyclerView.Adapter<KingQueenAdapter.KingQueenViewHold
             itemView.name.text = kingKingQueenItem.name
             itemView.classname.text = kingKingQueenItem.className
 
-            Picasso.get().load(kingKingQueenItem.image)
+            Picasso.get().load(baseImg + kingKingQueenItem.image)
                 .placeholder(R.drawable.ic_launcher_background).into(itemView.imgKingQueen)
 
         }
